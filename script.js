@@ -325,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  lucide.createIcons();
   console.log(
     '%c⚜ Rizal Digital Legacy Exhibit%c loaded successfully.',
     'color:#1a365d; font-weight:bold; font-size:14px;',
