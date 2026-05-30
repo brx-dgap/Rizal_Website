@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rizal Then &amp; Now — A Digital Legacy Exhibit</title>
+  <meta name="description" content="A digital legacy exhibit on the life, works, and enduring ideals of Dr. José Protasio Rizal Mercado y Alonso Realonda — National Hero of the Philippines." />
+  <meta name="theme-color" content="#1a365d" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       SIDEBAR NAVIGATION
+  ═══════════════════════════════════════ -->
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Exhibit Navigation">
+
+    <!-- Sidebar Header -->
+    <div class="sidebar-header">
+      <div class="sidebar-logo-badge" aria-hidden="true">⚜</div>
+      <div class="sidebar-title">RIZAL THEN &amp; NOW</div>
+      <div class="sidebar-subtitle">A Digital Legacy Exhibit</div>
+      <div class="sidebar-divider"></div>
+      <div style="font-size:0.68rem; color:rgba(246,236,216,0.55); letter-spacing:0.08em; position:relative; z-index:1;">
+        Performance Task — Group [Name/Number]
+      </div>
+    </div>
+
+    <!-- Navigation Items -->
+    <nav class="sidebar-nav" aria-label="Section navigation">
+
+      <div class="nav-section-label">Exhibit Sections</div>
+
+      <!-- 0: Introduction -->
+      <button
+        class="nav-item active"
+        id="nav-intro"
+        data-panel="panel-intro"
+        onclick="switchPanel(this)"
+        aria-label="Introduction: Rizal's Life and Work"
+        aria-current="true"
+      >
+        <div class="nav-icon" aria-hidden="true">🪶</div>
+        <div class="nav-text">
+          <span class="nav-label">Introduction</span>
+          <span class="nav-title">Rizal's Life &amp; Work</span>
+        </div>
+      </button>
+
+      <!-- 1: El Filibusterismo -->
+      <button
+        class="nav-item"
+        id="nav-s1"
+        data-panel="panel-s1"
+        onclick="switchPanel(this)"
+        aria-label="Section 1: El Filibusterismo and Social Issues"
+      >
+        <div class="nav-icon" aria-hidden="true">📖</div>
+        <div class="nav-text">
+          <span class="nav-label">Section 1</span>
+          <span class="nav-title"><em>El Filibusterismo</em> &amp; Social Issues</span>
+        </div>
+      </button>
+
+      <!-- 2: Dapitan -->
+      <button
+        class="nav-item"
+        id="nav-s2"
+        data-panel="panel-s2"
+        onclick="switchPanel(this)"
+        aria-label="Section 2: Rizal in Dapitan"
+      >
+        <div class="nav-icon" aria-hidden="true">🏡</div>
+        <div class="nav-text">
+          <span class="nav-label">Section 2</span>
+          <span class="nav-title">Rizal in Dapitan</span>
+        </div>
+      </button>
+
+      <!-- 3: Trial -->
+      <button
+        class="nav-item"
+        id="nav-s3"
+        data-panel="panel-s3"
+        onclick="switchPanel(this)"
+        aria-label="Section 3: Trial and Martyrdom"
+      >
+        <div class="nav-icon" aria-hidden="true">⚖️</div>
+        <div class="nav-text">
+          <span class="nav-label">Section 3</span>
+          <span class="nav-title">Trial &amp; Martyrdom</span>
+        </div>
+      </button>
+
+      <!-- 4: Transcendental Hero -->
+      <button
+        class="nav-item"
+        id="nav-s4"
+        data-panel="panel-s4"
+        onclick="switchPanel(this)"
+        aria-label="Section 4: Rizal as the Transcendental Hero"
+      >
+        <div class="nav-icon" aria-hidden="true">🌟</div>
+        <div class="nav-text">
+          <span class="nav-label">Section 4</span>
+          <span class="nav-title">The Transcendental Hero</span>
+        </div>
+      </button>
+
+      <!-- 5: Pledge -->
+      <button
+        class="nav-item"
+        id="nav-s5"
+        data-panel="panel-s5"
+        onclick="switchPanel(this)"
+        aria-label="Section 5: My Rizal Pledge"
+      >
+        <div class="nav-icon" aria-hidden="true">✍️</div>
+        <div class="nav-text">
+          <span class="nav-label">Section 5</span>
+          <span class="nav-title">My Rizal Pledge</span>
+        </div>
+      </button>
+
+      <!-- About Us -->
+      <button
+        class="nav-item"
+        id="nav-about"
+        data-panel="panel-about"
+        onclick="switchPanel(this)"
+        aria-label="About Us: The Creative Team"
+      >
+        <div class="nav-icon" aria-hidden="true">👥</div>
+        <div class="nav-text">
+          <span class="nav-label">About Us</span>
+          <span class="nav-title">The Creative Team (Group of 8)</span>
+        </div>
+      </button>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <div>© 2026 — Rizal Subject Performance Task</div>
+      <div style="margin-top:4px; color:var(--accent-gold-dark);">Group [Name / Number]</div>
+    </div>
+  </aside>
+
+  <!-- Sidebar Mobile Overlay -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- ═══════════════════════════════════════
+       MAIN CONTENT AREA
+  ═══════════════════════════════════════ -->
+  <main class="main-content" role="main">
+
+    <!-- Top Bar -->
+    <header class="top-bar" role="banner">
+      <button
+        class="hamburger"
+        id="hamburger-btn"
+        onclick="toggleSidebar()"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="sidebar"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <div>
+        <div class="top-bar-title">Rizal Then &amp; Now: A Digital Legacy</div>
+        <div class="top-bar-sub">Performance Task — Rizal Subject</div>
+      </div>
+      <div class="top-bar-badge">Group [Name / No.]</div>
+    </header>
+
+
+    <!-- ═══════════════════════════════════════
+         PANEL 0: INTRODUCTION
+    ═══════════════════════════════════════ -->
+    <section class="content-panel active" id="panel-intro" aria-labelledby="intro-heading">
+
+      <!-- Hero Banner -->
+      <div class="section-hero">
+        <div class="section-tag">📜 Introduction</div>
+        <h1 id="intro-heading">Dr. José P. Rizal — Life, Works &amp; Legacy</h1>
+        <p>Explore the biography, travels, and key milestones of the Philippines' foremost national hero whose pen sparked a revolution.</p>
+      </div>
+
+      <!-- Bio Introduction Grid -->
+      <div class="bio-intro-grid">
+
+        <!-- Portrait Card -->
+        <div>
+          <div class="bio-portrait-card">
+            <div class="portrait-img-wrap">
+              <!--
+                [IMAGE PLACEHOLDER — Portrait of Dr. José Rizal]
+                Replace this <img> with the actual photo file.
+                Recommended: A formal portrait of Rizal in his coat or European attire.
+              -->
+              <img
+                src="images/rizal-portrait.jpg"
+                alt="Formal portrait of Dr. José Protasio Rizal Mercado y Alonso Realonda, National Hero of the Philippines"
+                width="340"
+                height="380"
+                class="img-placeholder"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="img-placeholder" style="width:340px; height:280px; display:none;">
+                <div class="ph-icon">🖼️</div>
+                <div class="ph-label">Portrait of Dr. José Rizal<br>(Formal Coat / European Attire)</div>
+                <div class="ph-dim">Recommended: 340 × 380 px</div>
+              </div>
+              <div class="img-placeholder" style="width:340px; height:280px;">
+                <div class="ph-icon">🖼️</div>
+                <div class="ph-label">Portrait of Dr. José Rizal<br>(Formal Coat / European Attire)</div>
+                <div class="ph-dim">Recommended: 340 × 380 px</div>
+              </div>
+            </div>
+            <div class="bio-name-plate">
+              <h3>Dr. José P. Rizal</h3>
+              <p>June 19, 1861 — December 30, 1896</p>
+            </div>
+          </div>
+
+          <!-- Quick Facts -->
+          <ul class="quick-facts mt-4">
+            <li><span class="fact-label">Full Name:</span> José Protasio Rizal Mercado y Alonso Realonda</li>
+            <li><span class="fact-label">Born:</span> June 19, 1861 — Calamba, Laguna</li>
+            <li><span class="fact-label">Died:</span> December 30, 1896 — Bagumbayan (Luneta), Manila</li>
+            <li><span class="fact-label">Professions:</span> Writer, Poet, Ophthalmologist, Sculptor, Painter, Naturalist, Linguist</li>
+            <li><span class="fact-label">Known For:</span> Noli Me Tángere (1887) &amp; El Filibusterismo (1891)</li>
+            <li><span class="fact-label">Languages Spoken:</span> Over 20 languages &amp; dialects</li>
+          </ul>
+        </div>
+
+        <!-- Biography & Timeline -->
+        <div>
+          <h2 class="content-heading">
+            <span class="heading-icon" aria-hidden="true">📜</span>
+            Biographical Overview
+          </h2>
+          <p class="lead">
+            José Protasio Rizal Mercado y Alonso Realonda was born on June 19, 1861 in Calamba, Laguna,
+            as the seventh of eleven children of Francisco Mercado and Teodora Alonso. A child prodigy
+            who could read and write by age five, Rizal would grow to become the Philippines' most
+            celebrated intellectual — a polymath whose novels, poetry, and activism laid the ideological
+            foundation of Philippine nationalism.
+          </p>
+          <p class="body-text">
+            He completed his early education in Manila at Ateneo Municipal de Manila and Universidad de
+            Santo Tomás before pursuing advanced studies across Europe — studying medicine, languages,
+            philosophy, and the arts in Spain, France, Germany, and other nations. His two landmark novels,
+            <em>Noli Me Tángere</em> (1887) and <em>El Filibusterismo</em> (1891), exposed the brutal
+            realities of Spanish colonial rule and inflamed the consciousness of an oppressed people.
+          </p>
+          <p class="body-text">
+            Rizal believed in peaceful reform rather than armed revolution. He founded the civic movement
+            <strong>La Liga Filipina</strong> in 1892 and spent his years of exile in Dapitan transforming
+            a remote provincial town into a model of education, healthcare, and engineering. Arrested on
+            fabricated charges of sedition and rebellion, he was executed by firing squad on December 30,
+            1896 — a martyrdom that ignited the full force of the Philippine Revolution.
+          </p>
+
+          <h3 class="sub-heading">📌 Key Milestones</h3>
+          <div class="timeline" aria-label="Timeline of Rizal's life">
+
+            <div class="timeline-item milestone">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1861</div>
+              <div class="timeline-event">Birth in Calamba, Laguna</div>
+              <div class="timeline-desc">Born on June 19 to Francisco Mercado &amp; Teodora Alonso; showed exceptional intellect from early childhood.</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1872–1877</div>
+              <div class="timeline-event">Early Schooling — Ateneo Municipal</div>
+              <div class="timeline-desc">Graduated with the highest honours; demonstrated mastery in poetry, sculpture, and drama.</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1882</div>
+              <div class="timeline-event">Departure to Europe</div>
+              <div class="timeline-desc">Secretly left the Philippines to study medicine at the Universidad Central de Madrid.</div>
+            </div>
+
+            <div class="timeline-item milestone">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1887</div>
+              <div class="timeline-event">Publication of Noli Me Tángere</div>
+              <div class="timeline-desc">First social novel exposing colonial abuses, igniting nationalist sentiment across the archipelago.</div>
+            </div>
+
+            <div class="timeline-item milestone">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1891</div>
+              <div class="timeline-event">Publication of El Filibusterismo</div>
+              <div class="timeline-desc">The sequel to Noli, depicting the systemic corruption of church and state under Spanish rule.</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1892</div>
+              <div class="timeline-event">Founding of La Liga Filipina</div>
+              <div class="timeline-desc">Established a civic organization advocating for legal, peaceful reforms — resulting in his arrest and exile to Dapitan.</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1892–1896</div>
+              <div class="timeline-event">Exile in Dapitan</div>
+              <div class="timeline-desc">Built schools, a water system, a hospital, and a relief map of Mindanao; practiced medicine for the poor.</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1896</div>
+              <div class="timeline-event">Arrest &amp; Court Martial</div>
+              <div class="timeline-desc">Falsely charged with rebellion, sedition, and illegal association amid the Katipunan uprising.</div>
+            </div>
+
+            <div class="timeline-item milestone">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">Dec 30, 1896</div>
+              <div class="timeline-event">Execution at Bagumbayan (Luneta)</div>
+              <div class="timeline-desc">Martyred by firing squad at age 35; his death catalyzed the Philippine Revolution and birthed a nation's identity.</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Travel Map Section -->
+      <div class="ornate-divider"><span>✦</span></div>
+
+      <div class="travel-map-wrap">
+        <div class="travel-map-header">
+          <span aria-hidden="true">🗺️</span>
+          <span>Rizal's Global Travels — The World That Shaped the Hero</span>
+        </div>
+        <div class="travel-map-body">
+          <div>
+            <!--
+              [IMAGE PLACEHOLDER — Vintage Map of Rizal's Travel Routes]
+              Replace with a historical/illustrated map showing his European and Southeast Asian routes.
+            -->
+            <div class="img-placeholder" style="width:400px; height:250px;">
+              <div class="ph-icon">🗺️</div>
+              <div class="ph-label">Vintage Map: Rizal's Travel Routes<br>(Philippines → Spain → Germany → France → Hong Kong)</div>
+              <div class="ph-dim">Recommended: 400 × 250 px</div>
+            </div>
+          </div>
+          <div>
+            <h3 class="sub-heading" style="margin-top:0;">Countries Visited</h3>
+            <div class="travel-destinations">
+              <div class="dest-chip">🇵🇭 Philippines</div>
+              <div class="dest-chip">🇪🇸 Spain (Madrid, Barcelona)</div>
+              <div class="dest-chip">🇫🇷 France (Paris)</div>
+              <div class="dest-chip">🇩🇪 Germany (Berlin, Heidelberg)</div>
+              <div class="dest-chip">🇬🇧 United Kingdom (London)</div>
+              <div class="dest-chip">🇧🇪 Belgium (Ghent)</div>
+              <div class="dest-chip">🇨🇭 Switzerland</div>
+              <div class="dest-chip">🇦🇹 Austria</div>
+              <div class="dest-chip">🇮🇹 Italy (Rome)</div>
+              <div class="dest-chip">🇯🇵 Japan</div>
+              <div class="dest-chip">🇺🇸 United States</div>
+              <div class="dest-chip">🇭🇰 Hong Kong</div>
+              <div class="dest-chip">🇲🇾 Sabah, Malaysia</div>
+            </div>
+            <p class="body-text mt-4" style="font-size:0.82rem;">
+              Rizal's travels across Europe and Asia were not mere journeys — they were a deliberate
+              apprenticeship in medicine, arts, and political philosophy. Each country left an imprint
+              on his worldview, equipping him with the intellectual arsenal to challenge colonial rule
+              through the power of the written word.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /panel-intro -->
+
+
+    <!-- ═══════════════════════════════════════
+         PANEL 1: EL FILIBUSTERISMO
+    ═══════════════════════════════════════ -->
+    <section class="content-panel" id="panel-s1" aria-labelledby="s1-heading">
+
+      <div class="section-hero">
+        <div class="section-tag">📖 Section 1</div>
+        <h2 id="s1-heading">The Philippines Through the Eyes of <em>El Filibusterismo</em></h2>
+        <p>Unmasking colonial injustice — and finding its mirror in the 21st-century Philippines.</p>
+      </div>
+
+      <!-- Book Cover + Intro -->
+      <div class="grid-img-text" style="align-items:start;">
+        <div>
+          <!--
+            [IMAGE PLACEHOLDER — Original Cover of El Filibusterismo (1891)]
+            Replace with a scanned or photographed image of the Ghent first edition cover.
+          -->
+          <div class="img-placeholder" style="width:100%; height:280px;">
+            <div class="ph-icon">📕</div>
+            <div class="ph-label">Original Cover — El Filibusterismo (1891)<br>First Edition, Ghent, Belgium</div>
+            <div class="ph-dim">Recommended: 400 × 280 px</div>
+          </div>
+          <div class="card mt-6">
+            <div class="card-title"><span class="card-icon">📌</span> About the Novel</div>
+            <p style="font-size:0.87rem; color:var(--text-main); line-height:1.75;">
+              Published in 1891 in Ghent, Belgium, <em>El Filibusterismo</em> (The Subversive) is the
+              darker, more politically charged sequel to <em>Noli Me Tángere</em>. Narrated through
+              the embittered revolutionary Simoun — the alias of Crisostomo Ibarra — the novel depicts
+              a Philippines strangled by church authority, colonial bureaucracy, and moral bankruptcy.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="content-heading">
+            <span class="heading-icon" aria-hidden="true">⚡</span>
+            Three Major Social Issues in El Filibusterismo
+          </h2>
+          <p class="lead">
+            Rizal wielded the novel as both mirror and indictment, reflecting the social cancers of
+            his era with surgical precision. These three issues resonate with devastating relevance today.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 Issue Cards -->
+      <div class="grid-3 mt-6">
+
+        <div class="issue-card">
+          <div class="issue-card-header">
+            <div class="issue-num">I</div>
+            <h3>Corruption &amp; Abuse of Power</h3>
+          </div>
+          <div class="issue-card-body">
+            <p>
+              Rizal exposed the systematic corruption embedded within the colonial government and the
+              Catholic friary. Officials extorted taxes, falsified records, and exploited their positions
+              for personal enrichment. Characters like Padre Salvi and the curate of San Diego represent
+              the institutionalized moral decay that rendered justice meaningless for the poor.
+            </p>
+            <div class="relevance-box mt-4">
+              <div class="rel-label">📡 21st-Century Relevance</div>
+              <p>
+                Political corruption remains a defining crisis in the Philippines. From ghost projects
+                in public works to health fund misappropriation (e.g., PhilHealth scandals), the systemic
+                rot Rizal depicted continues to erode public trust in governance today.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-card-header">
+            <div class="issue-num">II</div>
+            <h3>Friar Abuse &amp; Religious Hypocrisy</h3>
+          </div>
+          <div class="issue-card-body">
+            <p>
+              The religious orders — Dominicans, Augustinians, Franciscans — wielded enormous secular
+              and spiritual power. Rizal depicted priests who manipulated confession, seized land through
+              legal coercion, and used the pulpit to suppress dissent. Father Florentino's moral clarity
+              stands in sharp contrast to the venality of his peers.
+            </p>
+            <div class="relevance-box mt-4">
+              <div class="rel-label">📡 21st-Century Relevance</div>
+              <p>
+                Contemporary cases of clerical abuse, misuse of church funds, and ecclesiastical influence
+                over legislation (e.g., debates on the Reproductive Health Law) echo Rizal's critique of
+                institutional religion wielding power beyond its spiritual mandate.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-card-header">
+            <div class="issue-num">III</div>
+            <h3>Lack of Access to Education</h3>
+          </div>
+          <div class="issue-card-body">
+            <p>
+              The colonial education system was designed to produce submissive subjects, not enlightened
+              citizens. The University of Santo Tomás, dominated by friars, limited access to progressive
+              knowledge. Rizal depicted students like Isagani who sought wisdom but were punished for
+              questioning authority — a quiet crisis of suppressed intellect.
+            </p>
+            <div class="relevance-box mt-4">
+              <div class="rel-label">📡 21st-Century Relevance</div>
+              <p>
+                Millions of Filipino students still face inadequate facilities, under-resourced teachers,
+                and high dropout rates. The digital divide exposed by pandemic learning revealed stark
+                inequalities in educational access between urban and rural communities.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /grid-3 -->
+
+      <div class="ornate-divider mt-8"><span>✦</span></div>
+
+      <!-- Modern Editorial Cartoon Placeholder -->
+      <div class="grid-2 mt-6" style="align-items:start;">
+        <div>
+          <!--
+            [IMAGE PLACEHOLDER — Modern Editorial Cartoon on Philippine Social Issues]
+            Replace with a contemporary editorial cartoon depicting corruption, inequality, or education gaps.
+          -->
+          <div class="img-placeholder" style="width:100%; height:260px;">
+            <div class="ph-icon">🎨</div>
+            <div class="ph-label">Modern Editorial Cartoon:<br>Contemporary Philippine Social Issues<br>(Corruption / Inequality / Education)</div>
+            <div class="ph-dim">Recommended: 400 × 260 px</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub-heading" style="margin-top:0;">The Enduring Mirror</h3>
+          <p class="body-text">
+            Over a century after Rizal penned <em>El Filibusterismo</em>, the Philippines finds itself
+            wrestling with strikingly familiar demons. The novel functions not merely as a historical
+            artefact but as a living diagnostic tool — a lens through which we can examine the persistent
+            structural failures of governance, faith institutions, and educational access.
+          </p>
+          <p class="body-text">
+            The tragedy is not that Rizal wrote about these problems. The tragedy is that they remain
+            unresolved. However, embedded within his dark narrative is also a roadmap — a call to civic
+            courage, critical thinking, and reformist action that speaks directly to the Filipino youth
+            of the 21st century.
+          </p>
+        </div>
+      </div>
+
+      <!-- Solutions Panel -->
+      <div class="solutions-panel">
+        <h3>
+          <span aria-hidden="true">💡</span>
+          Modern Solutions Inspired by Rizal's Reformist Ideals
+        </h3>
+
+        <div class="solution-item">
+          <div class="solution-icon" aria-hidden="true">🏛️</div>
+          <div class="solution-text">
+            <h4>Strengthen Institutional Transparency &amp; Accountability</h4>
+            <p>Establish independent anti-corruption commissions with genuine prosecutorial power, bolstered by digital audit trails and mandatory public disclosure of government contracts — echoing Rizal's insistence that just governance requires visible accountability.</p>
+          </div>
+        </div>
+
+        <div class="solution-item">
+          <div class="solution-icon" aria-hidden="true">📚</div>
+          <div class="solution-text">
+            <h4>Universal, Equitable, and Critical Education</h4>
+            <p>Invest in free, quality public education from primary through tertiary levels, with a Rizal-inspired curriculum that teaches critical thinking, civic duty, nationalism, and ethical leadership — not rote memorization and passive compliance.</p>
+          </div>
+        </div>
+
+        <div class="solution-item">
+          <div class="solution-icon" aria-hidden="true">⚖️</div>
+          <div class="solution-text">
+            <h4>Separation of Ecclesiastical &amp; State Power</h4>
+            <p>Reinforce constitutional provisions separating church and state; ensure that all legislation is grounded in evidence, human rights principles, and democratic representation — not religious doctrine — reflecting Rizal's belief in reason-guided governance.</p>
+          </div>
+        </div>
+
+        <div class="solution-item">
+          <div class="solution-icon" aria-hidden="true">🤝</div>
+          <div class="solution-text">
+            <h4>Empower Civic Society &amp; Youth Participation</h4>
+            <p>Support grassroots advocacy organizations, youth-led movements, and community-based watchdog groups that hold institutions accountable — channelling Rizal's vision of an enlightened, organized citizenry as the true engine of national transformation.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /panel-s1 -->
+
+
+    <!-- ═══════════════════════════════════════
+         PANEL 2: DAPITAN
+    ═══════════════════════════════════════ -->
+    <section class="content-panel" id="panel-s2" aria-labelledby="s2-heading">
+
+      <div class="section-hero">
+        <div class="section-tag">🏡 Section 2</div>
+        <h2 id="s2-heading">Rizal in Exile, Rizal in Action — The Dapitan Years (1892–1896)</h2>
+        <p>How a forced exile became the Philippines' first model of community development, civic leadership, and peaceful resistance.</p>
+      </div>
+
+      <h2 class="content-heading">
+        <span class="heading-icon" aria-hidden="true">🌿</span>
+        Multi-Faceted Contributions in Dapitan
+      </h2>
+      <p class="lead">
+        Banished to Dapitan, Zamboanga del Norte in 1892, Rizal refused to surrender to despair.
+        Instead, he transformed his exile into a living laboratory of progress — becoming doctor,
+        engineer, educator, scientist, and community organizer all at once.
+      </p>
+
+      <!-- 4 Contribution Cards -->
+      <div class="contribution-grid">
+
+        <div class="contribution-card">
+          <div class="contrib-icon-wrap" aria-hidden="true">⚕️</div>
+          <h3>Physician &amp; Healer</h3>
+          <p>
+            Rizal opened a free clinic in Dapitan, performing complex surgeries — including cataract
+            operations — for patients who could not afford care. He treated hundreds of Filipinos,
+            earning the trust of the community through genuine compassion and scientific competence.
+            He also conducted public health education, promoting sanitation and disease prevention.
+          </p>
+        </div>
+
+        <div class="contribution-card">
+          <div class="contrib-icon-wrap" aria-hidden="true">🏫</div>
+          <h3>Educator &amp; School Founder</h3>
+          <p>
+            Rizal founded a school for boys in Dapitan, teaching subjects including Spanish, English,
+            mathematics, geography, history, and natural sciences — without charging tuition fees.
+            His pedagogy was progressive: he encouraged curiosity, hands-on learning, and moral
+            formation alongside academic instruction.
+          </p>
+        </div>
+
+        <div class="contribution-card">
+          <div class="contrib-icon-wrap" aria-hidden="true">🛠️</div>
+          <h3>Engineer &amp; Infrastructure Builder</h3>
+          <p>
+            Rizal designed and built a functional waterworks system, channelling clean water from
+            the mountains to supply the community. He also constructed drainage channels, improved
+            local roads, and introduced modern agricultural techniques — demonstrating that development
+            is possible even without state resources.
+          </p>
+        </div>
+
+        <div class="contribution-card">
+          <div class="contrib-icon-wrap" aria-hidden="true">🔬</div>
+          <h3>Naturalist &amp; Scientist</h3>
+          <p>
+            Rizal conducted scientific research in Dapitan, collecting specimens of plants, insects,
+            reptiles, and birds — several of which were later classified as new species bearing his
+            name (e.g., <em>Draco rizali</em>, <em>Apogonia rizali</em>). He also crafted a large
+            3D relief map of Mindanao from clay and stones, demonstrating his cartographic genius.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Image Placeholder Row -->
+      <div class="grid-2 mt-8">
+        <!--
+          [IMAGE PLACEHOLDER — Rizal's Relief Map of Mindanao / Water System]
+          Replace with a photo of the historical waterworks system ruins or a recreation of his Mindanao relief map.
+        -->
+        <div class="img-placeholder" style="width:100%; height:240px;">
+          <div class="ph-icon">🗺️</div>
+          <div class="ph-label">Rizal's 3D Relief Map of Mindanao<br>or the Dapitan Waterworks System<br>(Historical Photo / Recreation)</div>
+          <div class="ph-dim">Recommended: 400 × 240 px</div>
+        </div>
+        <!--
+          [IMAGE PLACEHOLDER — Rizal's School in Dapitan / Teaching Scene]
+          Replace with a historical photo or artistic depiction of his school or community projects.
+        -->
+        <div class="img-placeholder" style="width:100%; height:240px;">
+          <div class="ph-icon">🏫</div>
+          <div class="ph-label">Rizal's School in Dapitan<br>or Community Development Scene<br>(Historical Photo / Artistic Depiction)</div>
+          <div class="ph-dim">Recommended: 400 × 240 px</div>
+        </div>
+      </div>
+
+      <div class="ornate-divider mt-8"><span>✦</span></div>
+
+      <!-- Peaceful Resistance Analysis -->
+      <h2 class="content-heading mt-6">
+        <span class="heading-icon" aria-hidden="true">🕊️</span>
+        Peaceful Resistance &amp; Civic Engagement
+      </h2>
+      <p class="body-text">
+        Rizal's Dapitan years are a profound case study in what scholars today call "constructive resistance" —
+        the strategy of countering oppression not through violence, but through the relentless building of
+        a better alternative. By educating the young, healing the sick, engineering clean water, and cultivating
+        scientific knowledge, Rizal demonstrated that the most radical act against a colonial system is to
+        build institutions and communities the system refuses to provide.
+      </p>
+      <p class="body-text">
+        His civic engagement was not passive. It was quietly defiant — a living rebuke to the colonial narrative
+        that Filipinos were incapable of self-governance. Every student he taught, every surgery he performed,
+        every pipe he laid for the waterworks was a declaration: <em>We are capable. We are sovereign. We are
+        building the nation ourselves.</em>
+      </p>
+
+      <!-- 21st-Century Community Proposal -->
+      <div class="community-proposal">
+        <div class="proposal-header">
+          <div>
+            <h3>🌱 21st-Century Community Development Project</h3>
+            <p style="font-size:0.82rem; color:var(--accent-navy); opacity:0.8; margin-top:4px;">
+              Inspired by Rizal's Dapitan Legacy — A Proposal for Modern Filipino Communities
+            </p>
+          </div>
+          <div class="badge badge-navy">Project Proposal</div>
+        </div>
+        <div class="proposal-body">
+          <p class="body-text">
+            We propose a community development model called <strong>"Dapitan 2.0"</strong> — a replicable,
+            barangay-level initiative that translates Rizal's four Dapitan contributions into 21st-century
+            equivalents, leveraging technology, youth leadership, and civic volunteerism.
+          </p>
+
+          <div class="proposal-pillars">
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">💊</div>
+              <h4>Community Health Hub</h4>
+              <p>Mobile telemedicine clinics and free health camps for underserved barangays, inspired by Rizal's free clinic model.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">📱</div>
+              <h4>Digital Learning Center</h4>
+              <p>Equipped classrooms with internet access and volunteer-led coding, literacy, and critical thinking programs.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">💧</div>
+              <h4>Sustainable Infrastructure</h4>
+              <p>Solar-powered water filtration systems and waste management programs for communities without reliable utilities.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">🌾</div>
+              <h4>Food Security Garden</h4>
+              <p>Community gardens using permaculture techniques — echoing Rizal's agricultural experiments in Dapitan.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">🔭</div>
+              <h4>STEM Science Club</h4>
+              <p>Youth-led environmental research and documentation projects, inspired by Rizal's naturalist work and specimen collection.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">🎭</div>
+              <h4>Arts &amp; Culture Hub</h4>
+              <p>Community art programs that celebrate local heritage, nationalism, and the creative legacy of Rizal's sculpture and poetry.</p>
+            </div>
+          </div>
+
+          <!--
+            [IMAGE PLACEHOLDER — Diagram / Infographic of the Community Proposal]
+            Replace with a visual diagram showing the six pillars of "Dapitan 2.0".
+          -->
+          <div class="img-placeholder mt-8" style="width:100%; height:220px;">
+            <div class="ph-icon">📊</div>
+            <div class="ph-label">Infographic Diagram: "Dapitan 2.0" Community Project<br>Six-Pillar Model / Flow Chart</div>
+            <div class="ph-dim">Recommended: 800 × 220 px (full-width infographic)</div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /panel-s2 -->
+
+
+    <!-- ═══════════════════════════════════════
+         PANEL 3: TRIAL & MARTYRDOM
+    ═══════════════════════════════════════ -->
+    <section class="content-panel" id="panel-s3" aria-labelledby="s3-heading">
+
+      <div class="section-hero">
+        <div class="section-tag">⚖️ Section 3</div>
+        <h2 id="s3-heading">Trial, Execution, and Martyrdom — The Price of Truth</h2>
+        <p>How the Spanish colonial justice system condemned an innocent man — and how that condemnation ignited a revolution.</p>
+      </div>
+
+      <!-- Charges Grid -->
+      <h2 class="content-heading">
+        <span class="heading-icon" aria-hidden="true">📋</span>
+        The False Charges Against Rizal
+      </h2>
+      <p class="body-text">
+        Following the outbreak of the Katipunan revolution in August 1896, Spanish authorities
+        arrested Rizal in Barcelona while he was en route to Cuba as a military doctor. Despite having
+        no direct role in the uprising, he was brought back to Manila and subjected to a military court
+        martial under a framework designed to produce only one verdict.
+      </p>
+
+      <div class="charges-grid">
+
+        <div class="charge-card">
+          <div class="charge-number">01</div>
+          <h3>Rebellion</h3>
+          <p>
+            Authorities alleged that Rizal incited armed insurrection through his writings and
+            association with the Katipunan. In reality, Rizal had explicitly condemned premature
+            revolution and urged peaceful reform as the path forward.
+          </p>
+        </div>
+
+        <div class="charge-card">
+          <div class="charge-number">02</div>
+          <h3>Sedition</h3>
+          <p>
+            The colonial government charged him with creating social disorder and inciting the public
+            against the Spanish Crown through his novels and essays — treating literary criticism
+            of injustice as criminal provocation.
+          </p>
+        </div>
+
+        <div class="charge-card">
+          <div class="charge-number">03</div>
+          <h3>Illegal Association</h3>
+          <p>
+            Rizal was accused of founding and leading the Katipunan — a charge that was demonstrably
+            false. The Katipunan was founded by Andrés Bonifacio. Rizal had founded La Liga Filipina,
+            a civic organization dissolved within days of its founding.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Trial Summary & Significance -->
+      <div class="ornate-divider mt-8"><span>✦</span></div>
+
+      <div class="grid-2 mt-6">
+        <div>
+          <h3 class="sub-heading" style="margin-top:0;">The Court Martial Trial</h3>
+          <p class="body-text">
+            The trial took place on December 26, 1896, before a military council of seven Spanish
+            officers. The proceedings were a legal fiction — the verdict had been predetermined.
+            Rizal was denied the right to call witnesses in his defence, and the evidence presented
+            consisted largely of his own published works, which the prosecution used out of context
+            to paint him as a revolutionary agitator.
+          </p>
+          <p class="body-text">
+            His defence attorney, Lieutenant Luis Taviel de Andrade, argued vigorously but futilely.
+            Within hours, Rizal was pronounced guilty on all three counts and sentenced to death by
+            firing squad. The speed of the proceeding itself was an indictment of colonial jurisprudence —
+            justice was not its purpose; a lesson to would-be dissenters was.
+          </p>
+          <p class="body-text">
+            On the morning of December 30, 1896, at Bagumbayan Field (now Luneta Park) in Manila,
+            José Rizal — aged 35 — faced eight Filipino soldiers commanded by Spanish officers. He
+            requested to be shot facing his executioners. That request was denied. He was shot in
+            the back. As he fell, witnesses reported he turned his body so that he faced the sky —
+            a final gesture of dignity that became legend.
+          </p>
+        </div>
+        <div>
+          <!--
+            [IMAGE PLACEHOLDER — Historical Scene of Rizal's Execution at Bagumbayan]
+            Replace with a historical painting, engraving, or photograph depicting the execution scene.
+          -->
+          <div class="img-placeholder" style="width:100%; height:280px;">
+            <div class="ph-icon">🕯️</div>
+            <div class="ph-label">Rizal's Execution at Bagumbayan<br>(Historical Painting / Engraving / Photo)</div>
+            <div class="ph-dim">Recommended: 400 × 280 px</div>
+          </div>
+          <div class="card mt-4">
+            <div class="card-title"><span class="card-icon">⚖️</span> The Significance</div>
+            <p style="font-size:0.87rem; color:var(--text-main); line-height:1.75;">
+              Rizal's execution was a catastrophic miscalculation by the colonial government.
+              Rather than silencing the nationalist movement, it gave it an unassailable martyr.
+              His death transformed a political debate into a moral crusade — and a martyr's cause
+              into a nation's founding myth.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Revolution Flow -->
+      <div class="ornate-divider mt-8"><span>✦</span></div>
+
+      <h2 class="content-heading">
+        <span class="heading-icon" aria-hidden="true">🔥</span>
+        From Martyrdom to Revolution — The Chain of Consequence
+      </h2>
+
+      <div class="revolution-flow">
+        <div class="flow-step">
+          <div class="step-icon" aria-hidden="true">⚖️</div>
+          <h4>Unjust Trial</h4>
+          <p>Dec. 26, 1896 — kangaroo court martial</p>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <div class="step-icon" aria-hidden="true">🕯️</div>
+          <h4>Execution</h4>
+          <p>Dec. 30, 1896 — Bagumbayan, Manila</p>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <div class="step-icon" aria-hidden="true">⚡</div>
+          <h4>National Outrage</h4>
+          <p>Filipinos unite in grief &amp; fury</p>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <div class="step-icon" aria-hidden="true">🔥</div>
+          <h4>Revolution Intensifies</h4>
+          <p>Katipunan gains mass support</p>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-step">
+          <div class="step-icon" aria-hidden="true">🇵🇭</div>
+          <h4>Philippine Independence</h4>
+          <p>June 12, 1898 — Kawit, Cavite</p>
+        </div>
+      </div>
+
+      <p class="body-text mt-6">
+        The revolution that Rizal had counselled against in life became the revolution he enabled in death.
+        His martyrdom stripped away any remaining colonial legitimacy in the eyes of the Filipino people.
+        Bonifacio's Katipunan, already embattled, found new recruits and new moral purpose in the image of
+        an unarmed intellectual shot in the back by an empire afraid of his words. The blood of Bagumbayan
+        became the ink with which Philippine independence was eventually written.
+      </p>
+
+      <!-- Mi Último Adiós Poem Block -->
+      <div class="poem-block mt-8">
+        <div class="poem-title">Mi Último Adiós</div>
+        <div class="poem-subtitle">My Last Farewell — Written by Dr. José Rizal, December 29–30, 1896</div>
+
+        <div class="poem-stanza">
+          Farewell, dear Fatherland, clime of the sun caress'd,<br>
+          Pearl of the Orient seas, our Eden lost!<br>
+          Gladly now I go to give thee this faded life's best,<br>
+          And were it brighter, fresher, or more blest,<br>
+          Still would I give it thee, nor count the cost.
+        </div>
+
+        <div class="poem-stanza">
+          On the field of battle, 'mid the frenzy of fight,<br>
+          Others have given their lives, without doubt or heed;<br>
+          The place ne'er matters when 'tis for home and right,<br>
+          Death is welcome if for country we bleed.
+        </div>
+
+        <div class="poem-stanza">
+          I die just when I see the dawn break,<br>
+          Through the gloom of night, to herald the day;<br>
+          And if color is lacking my blood thou shalt take,<br>
+          Pour'd out at need for thy dear sake,<br>
+          To dye with its crimson the waking ray.
+        </div>
+
+        <div style="margin-top:24px; position:relative; z-index:1;">
+          <!--
+            [IMAGE PLACEHOLDER — Replica / Facsimile of the original Mi Último Adiós manuscript]
+            Replace with an image of the handwritten original hidden in a small alcohol lamp given to Josephine Bracken.
+          -->
+          <div class="img-placeholder" style="width:100%; height:180px; background: rgba(255,255,255,0.05); border-color: rgba(220,200,164,0.3);">
+            <div class="ph-icon" style="color:var(--accent-gold);">📜</div>
+            <div class="ph-label" style="color:var(--accent-gold);">Facsimile / Replica of the Original<br>Mi Último Adiós Manuscript</div>
+            <div class="ph-dim" style="color:rgba(220,200,164,0.6);">Recommended: 700 × 180 px</div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /panel-s3 -->
+
+
+    <!-- ═══════════════════════════════════════
+         PANEL 4: TRANSCENDENTAL HERO
+    ═══════════════════════════════════════ -->
+    <section class="content-panel" id="panel-s4" aria-labelledby="s4-heading">
+
+      <div class="section-hero">
+        <div class="section-tag">🌟 Section 4</div>
+        <h2 id="s4-heading">Rizal as the Transcendental Hero — Timeless, Borderless, Eternal</h2>
+        <p>Why a man executed in 1896 remains indispensable to the Filipino identity in the 21st century and beyond.</p>
+      </div>
+
+      <!-- Thematic Reflection Quote -->
+      <div class="hero-quote-block">
+        <span class="quote-marks">"</span>
+        <blockquote>
+          He was the greatest product of the Philippines and his coming to the world signified the
+          advent of a new era for his people... Rizal belongs not only to the Philippines but to the whole world.
+        </blockquote>
+        <cite>— José Rizal's global legacy, recognized by scholars worldwide</cite>
+      </div>
+
+      <!-- Why Rizal Remains Transcendent -->
+      <h2 class="content-heading">
+        <span class="heading-icon" aria-hidden="true">💫</span>
+        Why Rizal Remains Timeless
+      </h2>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title"><span class="card-icon">✍️</span> The Power of Words as Weapons</div>
+          <p class="body-text">
+            In an era before mass media, Rizal demonstrated that a novel could topple an empire's
+            moral authority. He proved that ideas, rigorously expressed and widely shared, are the
+            most durable form of power. This remains profoundly relevant in the age of social media,
+            where words can still ignite revolutions — or extinguish them.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="card-icon">🌍</span> Global Citizenship Avant la Lettre</div>
+          <p class="body-text">
+            Rizal was Filipino in soul but international in scope. He collaborated with European
+            scholars, challenged racial hierarchies in colonial academia, and wrote in Spanish for
+            a global audience. He is the archetype of what it means to be a citizen of the world
+            who never forgets the land that formed them.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="card-icon">🧠</span> Intellectual Courage &amp; Moral Consistency</div>
+          <p class="body-text">
+            Rizal never compromised his beliefs for safety or comfort. He returned to the Philippines
+            knowing the risks. He wrote what was true, even when truth was dangerous. In a culture
+            plagued by political opportunism, his moral consistency is a radical act of leadership.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="card-icon">🕊️</span> Reformist Vision Over Revolutionary Violence</div>
+          <p class="body-text">
+            Rizal's insistence on peaceful reform — education, legal advocacy, civic organization,
+            and the power of enlightened public opinion — offers a philosophical framework as
+            relevant to non-violent movements today as it was to the ilustrado reformers of his era.
+          </p>
+        </div>
+      </div>
+
+      <div class="ornate-divider mt-8"><span>✦</span></div>
+
+      <!-- Four Sectors Grid -->
+      <h2 class="content-heading mt-6">
+        <span class="heading-icon" aria-hidden="true">🧭</span>
+        Rizal's Ideals Applied to Modern Filipino Life
+      </h2>
+      <p class="body-text mb-6">
+        His core values are not museum pieces. They are operational principles — a practical guide
+        for modern Filipinos navigating education, governance, human rights, and global engagement.
+      </p>
+
+      <div class="sectors-grid">
+
+        <div class="sector-card">
+          <!--
+            [IMAGE / ICON PLACEHOLDER — Education Sector Icon]
+            Replace with an SVG icon or illustration representing Education.
+          -->
+          <div class="sector-icon-wrap" aria-hidden="true">🎓</div>
+          <h3>Education</h3>
+          <ul>
+            <li>Pursue learning not for status, but for service to the nation</li>
+            <li>Advocate for inclusive, critical, and free public education</li>
+            <li>Teach honesty, civic responsibility, and historical truth</li>
+            <li>Empower educators as the nation's most critical institution</li>
+            <li>Resist intellectual passivity and demand rigorous curricula</li>
+          </ul>
+        </div>
+
+        <div class="sector-card">
+          <!--
+            [IMAGE / ICON PLACEHOLDER — Governance Sector Icon]
+            Replace with an SVG icon or illustration representing Good Governance.
+          -->
+          <div class="sector-icon-wrap" aria-hidden="true">🏛️</div>
+          <h3>Governance</h3>
+          <ul>
+            <li>Vote with conscience — not loyalty, money, or fear</li>
+            <li>Hold public servants accountable through civic engagement</li>
+            <li>Support transparent, merit-based government processes</li>
+            <li>Participate in barangay democracy and community councils</li>
+            <li>Champion the rule of law as the pillar of national dignity</li>
+          </ul>
+        </div>
+
+        <div class="sector-card">
+          <!--
+            [IMAGE / ICON PLACEHOLDER — Human Rights Sector Icon]
+            Replace with an SVG icon or illustration representing Human Rights.
+          -->
+          <div class="sector-icon-wrap" aria-hidden="true">✊</div>
+          <h3>Human Rights</h3>
+          <ul>
+            <li>Defend the fundamental dignity of every person, regardless of status</li>
+            <li>Speak out against extrajudicial violence and injustice</li>
+            <li>Protect press freedom as the guardian of truth</li>
+            <li>Advocate for the rights of indigenous peoples, women, and the poor</li>
+            <li>Treat due process as sacred — not conditional on political expediency</li>
+          </ul>
+        </div>
+
+        <div class="sector-card">
+          <!--
+            [IMAGE / ICON PLACEHOLDER — Global Citizenship Sector Icon]
+            Replace with an SVG icon or illustration representing Global Citizenship.
+          -->
+          <div class="sector-icon-wrap" aria-hidden="true">🌐</div>
+          <h3>Global Citizenship</h3>
+          <ul>
+            <li>Represent the Philippines with excellence and integrity abroad</li>
+            <li>Learn foreign cultures and languages as bridges, not replacements</li>
+            <li>Engage in international scholarship, research, and diplomacy</li>
+            <li>Channel global exposure back into national development</li>
+            <li>Carry Rizal's example: be proudly Filipino in a borderless world</li>
+          </ul>
+        </div>
+
+      </div><!-- /sectors-grid -->
+
+    </section><!-- /panel-s4 -->
+
+
+    <!-- ═══════════════════════════════════════
+         PANEL 5: MY RIZAL PLEDGE
+    ═══════════════════════════════════════ -->
+    <section class="content-panel" id="panel-s5" aria-labelledby="s5-heading">
+
+      <div class="pledge-intro">
+        <div class="section-tag" style="margin:0 auto 14px; display:block; background:rgba(220,200,164,0.15);">✍️ Section 5</div>
+        <h2 id="s5-heading">My Rizal Pledge &amp; Reflections</h2>
+        <p>Eight voices. One shared vision. How will we embody Rizal's values as students and future professionals?</p>
+      </div>
+
+      <p class="body-text text-center mb-6">
+        Below are the individual reflections of our group of eight — each addressing how the ideals,
+        sacrifices, and example of Dr. José Rizal will shape our own journeys as students, citizens,
+        and future professionals of the Philippines.
+      </p>
+
+      <!-- ✅ PLEDGE GRID — 8 Members -->
+      <div class="pledge-grid" id="pledge-grid">
+
+        <!-- ─────────────────────── MEMBER 1 ─────────────────────── -->
+        <div class="pledge-card" id="pledge-member-1">
+          <div class="pledge-card-header">
+            <div class="member-avatar-placeholder" aria-label="Avatar placeholder for Member 1">
+              <!--
+                [IMAGE PLACEHOLDER — Member 1 Avatar/Silhouette]
+                Replace the emoji below with: <img src="images/member1.jpg" alt="[Full Name]" width="52" height="52" />
+              -->
+              👤
+            </div>
+            <div class="pledge-member-info">
+              <!-- FILL IN: Replace "[Member 1 Full Name]" with the actual name -->
+              <h4>[Member 1 Full Name]</h4>
+              <span>[Role / Year &amp; Section]</span>
+            </div>
+          </div>
+          <div class="pledge-card-body">
+            <div class="pledge-prompt">My Rizal Pledge &amp; Reflection:</div>
+            <div class="pledge-content">
+              <!-- ============================================================
+                   ✏️ PLEDGE PLACEHOLDER — MEMBER 1
+                   TYPE YOUR PERSONAL REFLECTION HERE.
+                   Example prompt: "How will I embody Rizal's values as a student and future professional?"
+                   ============================================================ -->
+              [Type Member 1's personal reflection and Rizal pledge here.]
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────── MEMBER 2 ─────────────────────── -->
+        <div class="pledge-card" id="pledge-member-2">
+          <div class="pledge-card-header">
+            <div class="member-avatar-placeholder" aria-label="Avatar placeholder for Member 2">
+              <!--
+                [IMAGE PLACEHOLDER — Member 2 Avatar/Silhouette]
+                Replace the emoji below with: <img src="images/member2.jpg" alt="[Full Name]" width="52" height="52" />
+              -->
+              👤
+            </div>
+            <div class="pledge-member-info">
+              <h4>[Member 2 Full Name]</h4>
+              <span>[Role / Year &amp; Section]</span>
+            </div>
+          </div>
+          <div class="pledge-card-body">
+            <div class="pledge-prompt">My Rizal Pledge &amp; Reflection:</div>
+            <div class="pledge-content">
+              <!-- ============================================================
+                   ✏️ PLEDGE PLACEHOLDER — MEMBER 2
+                   TYPE YOUR PERSONAL REFLECTION HERE.
+                   ============================================================ -->
+              [Type Member 2's personal reflection and Rizal pledge here.]
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────── MEMBER 3 ─────────────────────── -->
+        <div class="pledge-card" id="pledge-member-3">
+          <div class="pledge-card-header">
+            <div class="member-avatar-placeholder" aria-label="Avatar placeholder for Member 3">
+              <!--
+                [IMAGE PLACEHOLDER — Member 3 Avatar/Silhouette]
+                Replace the emoji below with: <img src="images/member3.jpg" alt="[Full Name]" width="52" height="52" />
+              -->
+              👤
+            </div>
+            <div class="pledge-member-info">
+              <h4>[Member 3 Full Name]</h4>
+              <span>[Role / Year &amp; Section]</span>
+            </div>
+          </div>
+          <div class="pledge-card-body">
+            <div class="pledge-prompt">My Rizal Pledge &amp; Reflection:</div>
+            <div class="pledge-content">
+              <!-- ============================================================
+                   ✏️ PLEDGE PLACEHOLDER — MEMBER 3
+                   TYPE YOUR PERSONAL REFLECTION HERE.
+                   ============================================================ -->
+              [Type Member 3's personal reflection and Rizal pledge here.]
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────── MEMBER 4 ─────────────────────── -->
+        <div class="pledge-card" id="pledge-member-4">
+          <div class="pledge-card-header">
+            <div class="member-avatar-placeholder" aria-label="Avatar placeholder for Member 4">
+              <!--
+                [IMAGE PLACEHOLDER — Member 4 Avatar/Silhouette]
+                Replace the emoji below with: <img src="images/member4.jpg" alt="[Full Name]" width="52" height="52" />
+              -->
+              👤
+            </div>
+            <div class="pledge-member-info">
+              <h4>[Member 4 Full Name]</h4>
+              <span>[Role / Year &amp; Section]</span>
+            </div>
+          </div>
+          <div class="pledge-card-body">
+            <div class="pledge-prompt">My Rizal Pledge &amp; Reflection:</div>
+            <div class="pledge-content">
+              <!-- ============================================================
+                   ✏️ PLEDGE PLACEHOLDER — MEMBER 4
+                   TYPE YOUR PERSONAL REFLECTION HERE.
+                   ============================================================ -->
+              [Type Member 4's personal reflection and Rizal pledge here.]
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────── MEMBER 5 ─────────────────────── -->
+        <div class="pledge-card" id="pledge-member-5">
+          <div class="pledge-card-header">
+            <div class="member-avatar-placeholder" aria-label="Avatar placeholder for Member 5">
+              <!--
+                [IMAGE PLACEHOLDER — Member 5 Avatar/Silhouette]
+                Replace the emoji below with: <img src="images/member5.jpg" alt="[Full Name]" width="52" height="52" />
+              -->
+              👤
+            </div>
+            <div class="pledge-member-info">
+              <h4>[Member 5 Full Name]</h4>
+              <span>[Role / Year &amp; Section]</span>
+            </div>
+          </div>
+          <div class="pledge-card-body">
+            <div class="pledge-prompt">My Rizal Pledge &amp; Reflection:</div>
+            <div class="pledge-content">
+              <!-- ============================================================
+                   ✏️ PLEDGE PLACEHOLDER — MEMBER 5
+                   TYPE YOUR PERSONAL REFLECTION HERE.
+                   ============================================================ -->
+              [Type Member 5's personal reflection and Rizal pledge here.]
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────── MEMBER 6 ─────────────────────── -->
+        <div class="pledge-card" id="pledge-member-6">
+          <div class="pledge-card-header">
+            <div class="member-avatar-placeholder" aria-label="Avatar placeholder for Member 6">
+              <!--
+                [IMAGE PLACEHOLDER — Member 6 Avatar/Silhouette]
+                Replace the emoji below with: <img src="images/member6.jpg" alt="[Full Name]" width="52" height="52" />
+              -->
+              👤
+            </div>
+            <div class="pledge-member-info">
+              <h4>[Member 6 Full Name]</h4>
+              <span>[Role / Year &amp; Section]</span>
+            </div>
+          </div>
+          <div class="pledge-card-body">
+            <div class="pledge-prompt">My Rizal Pledge &amp; Reflection:</div>
+            <div class="pledge-content">
+              <!-- ============================================================
+                   ✏️ PLEDGE PLACEHOLDER — MEMBER 6
+                   TYPE YOUR PERSONAL REFLECTION HERE.
+                   ============================================================ -->
+              [Type Member 6's personal reflection and Rizal pledge here.]
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────── MEMBER 7 ─────────────────────── -->
+        <div class="pledge-card" id="pledge-member-7">
+          <div class="pledge-card-header">
+            <div class="member-avatar-placeholder" aria-label="Avatar placeholder for Member 7">
+              <!--
+                [IMAGE PLACEHOLDER — Member 7 Avatar/Silhouette]
+                Replace the emoji below with: <img src="images/member7.jpg" alt="[Full Name]" width="52" height="52" />
+              -->
+              👤
+            </div>
+            <div class="pledge-member-info">
+              <h4>[Member 7 Full Name]</h4>
+              <span>[Role / Year &amp; Section]</span>
+            </div>
+          </div>
+          <div class="pledge-card-body">
+            <div class="pledge-prompt">My Rizal Pledge &amp; Reflection:</div>
+            <div class="pledge-content">
+              <!-- ============================================================
+                   ✏️ PLEDGE PLACEHOLDER — MEMBER 7
+                   TYPE YOUR PERSONAL REFLECTION HERE.
+                   ============================================================ -->
+              [Type Member 7's personal reflection and Rizal pledge here.]
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────── MEMBER 8 ─────────────────────── -->
+        <div class="pledge-card" id="pledge-member-8">
+          <div class="pledge-card-header">
+            <div class="member-avatar-placeholder" aria-label="Avatar placeholder for Member 8">
+              <!--
+                [IMAGE PLACEHOLDER — Member 8 Avatar/Silhouette]
+                Replace the emoji below with: <img src="images/member8.jpg" alt="[Full Name]" width="52" height="52" />
+              -->
+              👤
+            </div>
+            <div class="pledge-member-info">
+              <h4>[Member 8 Full Name]</h4>
+              <span>[Role / Year &amp; Section]</span>
+            </div>
+          </div>
+          <div class="pledge-card-body">
+            <div class="pledge-prompt">My Rizal Pledge &amp; Reflection:</div>
+            <div class="pledge-content">
+              <!-- ============================================================
+                   ✏️ PLEDGE PLACEHOLDER — MEMBER 8
+                   TYPE YOUR PERSONAL REFLECTION HERE.
+                   ============================================================ -->
+              [Type Member 8's personal reflection and Rizal pledge here.]
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /pledge-grid -->
+
+      <!-- Collective Closing Statement -->
+      <div class="card mt-8 text-center" style="background: linear-gradient(135deg, var(--bg-sidebar), var(--bg-sidebar-deep)); border-color: var(--accent-gold-dark);">
+        <div style="font-size: 32px; margin-bottom:12px;">⚜</div>
+        <h3 style="font-family:var(--font-serif); font-size:1.5rem; color:var(--accent-navy); margin-bottom:10px;">
+          Our Collective Pledge
+        </h3>
+        <p style="font-family:var(--font-serif); font-style:italic; font-size:1.05rem; color:var(--text-main); max-width:640px; margin:0 auto; line-height:1.8;">
+          We pledge to carry Rizal's torch — not as a relic of history, but as a living flame.
+          Through our studies, our professions, and our citizenship, we commit to building the
+          enlightened, just, and sovereign Philippines that he gave his life to imagine.
+        </p>
+      </div>
+
+    </section><!-- /panel-s5 -->
+
+
+    <!-- ═══════════════════════════════════════
+         PANEL 6: ABOUT US
+    ═══════════════════════════════════════ -->
+    <section class="content-panel" id="panel-about" aria-labelledby="about-heading">
+
+      <!-- Team Banner -->
+      <div class="team-header-banner">
+        <h2 id="about-heading">The Creative Team</h2>
+        <p>Group of 8 — Performance Task, Rizal Subject · [Course, Year &amp; Section]</p>
+      </div>
+
+      <!-- Team Grid -->
+      <div class="team-grid" id="team-grid">
+
+        <!-- ═════ GROUP LEADER (Larger Card) ═════ -->
+        <div class="team-card leader" id="team-leader">
+          <div class="member-photo-wrap" aria-label="Photo placeholder for Group Leader">
+            <!--
+              [IMAGE PLACEHOLDER — Group Leader Portrait Photo]
+              Replace with: <img src="images/leader.jpg" alt="[Leader Full Name]" width="240" height="100%" />
+            -->
+            <div class="photo-icon" aria-hidden="true">👑</div>
+            <div style="font-size:0.72rem; color:var(--accent-bronze); text-align:center; padding:0 12px;">
+              [GROUP LEADER]<br>Portrait Photo<br>(240 × full-height)
+            </div>
+          </div>
+          <div class="member-info">
+            <div class="leader-badge">👑 Group Leader</div>
+            <!-- FILL IN: Replace placeholder text below with actual leader information -->
+            <div class="member-name">[Leader Full Name]</div>
+            <div class="member-role">[Role / Designation]</div>
+            <div class="member-contribution">
+              <strong>Primary Contribution:</strong> [e.g., Overall project direction, research lead, main content writer, web design &amp; development]
+            </div>
+          </div>
+        </div>
+
+        <!-- ═════ MEMBER 1 ═════ -->
+        <div class="team-card" id="team-member-1">
+          <div class="member-photo-wrap" aria-label="Photo placeholder for Member 1">
+            <!--
+              [IMAGE PLACEHOLDER — Member 1 Portrait Photo]
+              Replace with: <img src="images/member1.jpg" alt="[Full Name]" width="100%" height="160" />
+            -->
+            <div class="photo-icon" aria-hidden="true">👤</div>
+            <div style="font-size:0.68rem; color:var(--accent-bronze);">[Member 1] Portrait<br>(full-width × 160px)</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">[Member 1 Full Name]</div>
+            <div class="member-role">[Role]</div>
+            <div class="member-contribution">[Primary Contribution / Task]</div>
+          </div>
+        </div>
+
+        <!-- ═════ MEMBER 2 ═════ -->
+        <div class="team-card" id="team-member-2">
+          <div class="member-photo-wrap" aria-label="Photo placeholder for Member 2">
+            <!--
+              [IMAGE PLACEHOLDER — Member 2 Portrait Photo]
+              Replace with: <img src="images/member2.jpg" alt="[Full Name]" width="100%" height="160" />
+            -->
+            <div class="photo-icon" aria-hidden="true">👤</div>
+            <div style="font-size:0.68rem; color:var(--accent-bronze);">[Member 2] Portrait<br>(full-width × 160px)</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">[Member 2 Full Name]</div>
+            <div class="member-role">[Role]</div>
+            <div class="member-contribution">[Primary Contribution / Task]</div>
+          </div>
+        </div>
+
+        <!-- ═════ MEMBER 3 ═════ -->
+        <div class="team-card" id="team-member-3">
+          <div class="member-photo-wrap" aria-label="Photo placeholder for Member 3">
+            <!--
+              [IMAGE PLACEHOLDER — Member 3 Portrait Photo]
+              Replace with: <img src="images/member3.jpg" alt="[Full Name]" width="100%" height="160" />
+            -->
+            <div class="photo-icon" aria-hidden="true">👤</div>
+            <div style="font-size:0.68rem; color:var(--accent-bronze);">[Member 3] Portrait<br>(full-width × 160px)</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">[Member 3 Full Name]</div>
+            <div class="member-role">[Role]</div>
+            <div class="member-contribution">[Primary Contribution / Task]</div>
+          </div>
+        </div>
+
+        <!-- ═════ MEMBER 4 ═════ -->
+        <div class="team-card" id="team-member-4">
+          <div class="member-photo-wrap" aria-label="Photo placeholder for Member 4">
+            <!--
+              [IMAGE PLACEHOLDER — Member 4 Portrait Photo]
+              Replace with: <img src="images/member4.jpg" alt="[Full Name]" width="100%" height="160" />
+            -->
+            <div class="photo-icon" aria-hidden="true">👤</div>
+            <div style="font-size:0.68rem; color:var(--accent-bronze);">[Member 4] Portrait<br>(full-width × 160px)</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">[Member 4 Full Name]</div>
+            <div class="member-role">[Role]</div>
+            <div class="member-contribution">[Primary Contribution / Task]</div>
+          </div>
+        </div>
+
+        <!-- ═════ MEMBER 5 ═════ -->
+        <div class="team-card" id="team-member-5">
+          <div class="member-photo-wrap" aria-label="Photo placeholder for Member 5">
+            <!--
+              [IMAGE PLACEHOLDER — Member 5 Portrait Photo]
+              Replace with: <img src="images/member5.jpg" alt="[Full Name]" width="100%" height="160" />
+            -->
+            <div class="photo-icon" aria-hidden="true">👤</div>
+            <div style="font-size:0.68rem; color:var(--accent-bronze);">[Member 5] Portrait<br>(full-width × 160px)</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">[Member 5 Full Name]</div>
+            <div class="member-role">[Role]</div>
+            <div class="member-contribution">[Primary Contribution / Task]</div>
+          </div>
+        </div>
+
+        <!-- ═════ MEMBER 6 ═════ -->
+        <div class="team-card" id="team-member-6">
+          <div class="member-photo-wrap" aria-label="Photo placeholder for Member 6">
+            <!--
+              [IMAGE PLACEHOLDER — Member 6 Portrait Photo]
+              Replace with: <img src="images/member6.jpg" alt="[Full Name]" width="100%" height="160" />
+            -->
+            <div class="photo-icon" aria-hidden="true">👤</div>
+            <div style="font-size:0.68rem; color:var(--accent-bronze);">[Member 6] Portrait<br>(full-width × 160px)</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">[Member 6 Full Name]</div>
+            <div class="member-role">[Role]</div>
+            <div class="member-contribution">[Primary Contribution / Task]</div>
+          </div>
+        </div>
+
+        <!-- ═════ MEMBER 7 ═════ -->
+        <div class="team-card" id="team-member-7">
+          <div class="member-photo-wrap" aria-label="Photo placeholder for Member 7">
+            <!--
+              [IMAGE PLACEHOLDER — Member 7 Portrait Photo]
+              Replace with: <img src="images/member7.jpg" alt="[Full Name]" width="100%" height="160" />
+            -->
+            <div class="photo-icon" aria-hidden="true">👤</div>
+            <div style="font-size:0.68rem; color:var(--accent-bronze);">[Member 7] Portrait<br>(full-width × 160px)</div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">[Member 7 Full Name]</div>
+            <div class="member-role">[Role]</div>
+            <div class="member-contribution">[Primary Contribution / Task]</div>
+          </div>
+        </div>
+
+      </div><!-- /team-grid -->
+
+      <!-- Acknowledgements -->
+      <div class="ornate-divider mt-8"><span>✦</span></div>
+      <div class="card text-center mt-6">
+        <div style="font-size: 28px; margin-bottom:10px;">🌺</div>
+        <h3 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--accent-navy); margin-bottom:10px;">Acknowledgements</h3>
+        <p style="font-size:0.9rem; color:var(--text-muted); max-width:580px; margin:0 auto; line-height:1.75;">
+          We extend our sincerest gratitude to our professor and institution for guiding us through
+          the life and legacy of Dr. José Rizal. This exhibit is dedicated to every Filipino student
+          who carries the torch of knowledge, integrity, and service — the values Rizal died for.
+        </p>
+        <div class="badge badge-gold mt-4">
+          [Course Name] · [Year &amp; Section] · AY [Academic Year]
+        </div>
+      </div>
+
+    </section><!-- /panel-about -->
+
+  </main><!-- /main-content -->
+
+  <script src="script.js"></script>
+</body>
+</html>
