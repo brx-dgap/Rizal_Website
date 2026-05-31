@@ -1486,6 +1486,10 @@ p.body-text {
   grid-template-columns: 1fr 1fr;
 }
 
+#team-member-1 {
+  grid-column-start: 1;
+}
+
 .team-card.leader .member-photo-wrap {
   height: 100%;
   min-height: 200px;
