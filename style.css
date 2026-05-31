@@ -1481,7 +1481,7 @@ p.body-text {
 
 .team-card.leader {
   border: 2.5px solid var(--accent-gold-dark);
-  grid-column: 1 / -1;
+  grid-column: 2 / 4;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -1531,7 +1531,17 @@ p.body-text {
 
 .member-photo-wrap .photo-icon { font-size: 40px; opacity: 0.5; }
 
-.member-photo-wrap img {
+.team-card:not(.leader) .member-photo-wrap img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid var(--accent-gold);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.team-card.leader .member-photo-wrap img {
   width: 100%;
   height: 100%;
   object-fit: contain;
